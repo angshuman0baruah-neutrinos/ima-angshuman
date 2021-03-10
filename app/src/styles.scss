@@ -1,0 +1,26 @@
+/*Importing default angular material css theme. */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+
+
+.iconcss{
+    color: #fff;
+}
+
+.success-snackbar {
+  background: green;
+  white-space: pre-wrap;
+  color: black;
+}
+
+.rowcss{
+    background-color: #fbd33b;
+}
+
+.mat-row:nth-child(n){
+  background-color:#fde589;
+}
+.mat-row:not(:nth-child(2n+1)){
+  background-color:#ffffff;
+}

@@ -1,0 +1,19 @@
+<div fxLayout="row wrap" class="rowcss" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="column wrap" style="width:50%" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div>
+      Incident Details</div>
+  </div>
+  <div fxLayout="column wrap" style="width:50%" fxLayoutAlign="end stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" style="margin-right:10px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-fab class="iconcss" color="primary" (click)="openDialog()">
+          <mat-icon>add</mat-icon>
+        </button></div>
+      <div fxLayout="column wrap" style="margin-right:10px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-fab class="iconcss" color="primary">
+          <mat-icon>home</mat-icon>
+        </button></div>
+      <div fxLayout="column wrap" style="margin-right:10px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-fab class="iconcss" color="primary">
+          <mat-icon>exit_to_app</mat-icon>
+        </button></div>
+    </div>
+  </div>
+</div>

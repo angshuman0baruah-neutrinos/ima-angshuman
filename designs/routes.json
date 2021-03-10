@@ -1,0 +1,26 @@
+{
+    "routes": [
+        {
+            "path": "home",
+            "component": "homeComponent"
+        },
+        {
+            "component": "addincidentComponent",
+            "path": "addIncident"
+        },
+        {
+            "path": "incidentList",
+            "component": "incidentlistComponent"
+        },
+        {
+            "path": "''",
+            "redirectTo": "home",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}
