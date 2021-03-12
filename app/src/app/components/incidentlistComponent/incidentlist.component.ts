@@ -5,6 +5,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { Router } from '@angular/router';
+import { addIncidentService } from '../../sd-services/addIncidentService';
+
 
 
 /*
@@ -24,106 +26,39 @@ import { HeroService } from '../../services/hero/hero.service';
 
 export class incidentlistComponent extends NBaseComponent implements OnInit {
 
-    @ViewChild(MatPaginator, {static:true}) paginator: MatPaginator
+    @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
     @ViewChild(MatSort) sort: MatSort;
 
-    tableData = new MatTableDataSource([
-        {
-            "subject": "Task 1",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            "incidentDate": "2021-03-09",
-            "priority": "1"
-        },
-        {
-            "subject": "Task 2",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            "incidentDate": "2021-03-10",
-            "priority": "1"
-        },
-        {
-            "subject": "Task 3",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            "incidentDate": "2021-03-19",
-            "priority": "1"
-        },
-        {
-            "subject": "Task 4",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            "incidentDate": "2021-03-29",
-            "priority": "1"
-        },
-        {
-            "subject": "Task 5",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            "incidentDate": "2021-03-11",
-            "priority": "1"
-        },
-        {
-            "subject": "Task 6",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            "incidentDate": "2021-03-21",
-            "priority": "1"
-        },
-        {
-            "subject": "Task 7",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            "incidentDate": "2021-03-29",
-            "priority": "1"
-        },
-        {
-            "subject": "Task 8",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            "incidentDate": "2021-04-29",
-            "priority": "1"
-        },
-        {
-            "subject": "Task 9",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            "incidentDate": "2021-02-19",
-            "priority": "1"
-        },
-        {
-            "subject": "Task 10",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            "incidentDate": "2021-03-09",
-            "priority": "1"
-        },
-        {
-            "subject": "Task 11",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            "incidentDate": "2021-05-09",
-            "priority": "1"
-        },
-        {
-            "subject": "Task 12",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            "incidentDate": "2021-03-09",
-            "priority": "1"
-        }
-    ]);
-    constructor(private router: Router) {
+    tableData: any;
+    resTableData: any;
+
+    constructor(private router: Router, public addIncidentSrvs: addIncidentService) {
         super();
     }
 
-    
+    async getTableData() {
+        let resData = (await this.addIncidentSrvs.getIncidentData()).local.outPutData;
+        this.tableData = new MatTableDataSource(resData);
+        this.tableData.paginator = this.paginator;
+        this.tableData.sort = this.sort;
+    }
+
 
     homeClick = function () {
         this.router.navigateByUrl('/home');
     };
 
     ngOnInit() {
-        this.tableData.paginator= this.paginator
+        this.getTableData();
+        
     }
 
-    ngAfterViewInit(){
-        this.tableData.sort= this.sort
-    }
 
     filterIncident(data) {
         if (data.length > 1) {
             this.tableData.filter = data.trim().toLocaleLowerCase()
         } else {
-            this.tableData.filter = data       
+            this.tableData.filter = data
         }
     }
 }

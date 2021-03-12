@@ -1658,6 +1658,104 @@
                             }
                         ]
                     }
+                },
+                "6875f6c3-79b7-88ab-9885-6f052013ddb8": {
+                    "paletteKey": "FlexLayoutCol",
+                    "parentEditorKey": "1a08fdee-c33d-1ef6-0009-d6677e839e7d",
+                    "designerReference": [
+                        {
+                            "_key": "componentLabel",
+                            "_value": "Column",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "fxFlex",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "fxLayoutGap",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "wrap",
+                            "_value": "wrap",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "layoutAlign",
+                            "_value": "start",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "pLayoutAlign",
+                            "_value": "stretch",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[fxShow]",
+                            "_value": "true",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[fxHide]",
+                            "_value": "false",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        }
+                    ],
+                    "624cb883-ef9f-7f04-f5ac-8b70772e81d4": {
+                        "paletteKey": "NEUTRINOS_VIEW_addIncidentConfirmPage",
+                        "parentEditorKey": "6875f6c3-79b7-88ab-9885-6f052013ddb8",
+                        "designerReference": [
+                            {
+                                "_key": "componentLabel",
+                                "_value": "addIncidentConfirmPage",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "style",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "class",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "*ngif",
+                                "_value": "confirmView",
+                                "_type": "kv",
+                                "_attrDef": "c"
+                            }
+                        ]
+                    }
                 }
             }
         }

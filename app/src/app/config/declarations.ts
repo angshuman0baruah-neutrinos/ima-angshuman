@@ -15,6 +15,8 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-addincidentconfirmpageComponent
+import { addincidentconfirmpageComponent } from '../components/addincidentconfirmpageComponent/addincidentconfirmpage.component';
 //CORE_REFERENCE_IMPORT-incidentlistComponent
 import { incidentlistComponent } from '../components/incidentlistComponent/incidentlist.component';
 //CORE_REFERENCE_IMPORT-addincidentComponent
@@ -48,6 +50,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-addincidentconfirmpageComponent
+addincidentconfirmpageComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-incidentlistComponent
 incidentlistComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-addincidentComponent

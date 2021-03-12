@@ -5,6 +5,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { addIncidentService } from '../../sd-services/addIncidentService';
 
 
 /*
@@ -26,8 +27,9 @@ export class addincidentComponent extends NBaseComponent implements OnInit {
 
     addIncidentForm;
     currentDate;
+    confirmView:boolean = false;
 
-    constructor(public fb: FormBuilder, public dialogRef: MatDialogRef<addincidentComponent>, private router: Router, private _snackBar: MatSnackBar) {
+    constructor(public fb: FormBuilder, public dialogRef: MatDialogRef<addincidentComponent>, private router: Router, private _snackBar: MatSnackBar, public addIncidentSrvs:addIncidentService) {
         super();
     }
 
@@ -53,6 +55,8 @@ export class addincidentComponent extends NBaseComponent implements OnInit {
             setTimeout(() => {
                 this.router.navigateByUrl('/incidentList');
             }, 2000);  //5s
+
+            this.addIncidentSrvs.addIncidentClientService(this.addIncidentForm.value);
 
         } else {
             console.log("Please enter valid Data");
