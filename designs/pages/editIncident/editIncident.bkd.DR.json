@@ -1,5 +1,5 @@
 {
-    "856e8136-43e1-c554-1772-06594c1f76ee": {
+    "0295ab65-1146-fad3-58ab-7c0180841e1e": {
         "paletteKey": "FlexLayoutRow",
         "designerReference": [
             {
@@ -41,13 +41,13 @@
             },
             {
                 "_key": "layoutAlign",
-                "_value": "center",
+                "_value": "start",
                 "_type": "a",
                 "_attrDef": "p"
             },
             {
                 "_key": "pLayoutAlign",
-                "_value": "center",
+                "_value": "stretch",
                 "_type": "a",
                 "_attrDef": "p"
             },
@@ -64,9 +64,9 @@
                 "_attrDef": "p"
             }
         ],
-        "f08eb4c5-3437-18bd-99e8-58fb90e8963e": {
+        "f396411f-4deb-686c-e0d0-84101926f301": {
             "paletteKey": "FlexLayoutCol",
-            "parentEditorKey": "856e8136-43e1-c554-1772-06594c1f76ee",
+            "parentEditorKey": "0295ab65-1146-fad3-58ab-7c0180841e1e",
             "designerReference": [
                 {
                     "_key": "componentLabel",
@@ -130,9 +130,9 @@
                     "_attrDef": "p"
                 }
             ],
-            "1a08fdee-c33d-1ef6-0009-d6677e839e7d": {
+            "1ad71f33-dd85-9fe0-cbbc-20ff66fc2896": {
                 "paletteKey": "NG-Form",
-                "parentEditorKey": "f08eb4c5-3437-18bd-99e8-58fb90e8963e",
+                "parentEditorKey": "f396411f-4deb-686c-e0d0-84101926f301",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -185,14 +185,14 @@
                     },
                     {
                         "_key": "[formGroup]",
-                        "_value": "addIncidentForm",
+                        "_value": "editIncidentForm",
                         "_type": "kv",
                         "_attrDef": "c"
                     }
                 ],
-                "37f029ae-1ef9-2379-b942-240c7bf22ccc": {
+                "88beb00d-a3cb-18c5-8310-e0db142d4748": {
                     "paletteKey": "FlexLayoutCol",
-                    "parentEditorKey": "1a08fdee-c33d-1ef6-0009-d6677e839e7d",
+                    "parentEditorKey": "1ad71f33-dd85-9fe0-cbbc-20ff66fc2896",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -256,9 +256,9 @@
                             "_attrDef": "p"
                         }
                     ],
-                    "302c942b-0840-f1ed-76c0-2d0e98267e3d": {
+                    "5970702f-a7f4-2748-575e-9dea9ce4d43b": {
                         "paletteKey": "Html5",
-                        "parentEditorKey": "37f029ae-1ef9-2379-b942-240c7bf22ccc",
+                        "parentEditorKey": "88beb00d-a3cb-18c5-8310-e0db142d4748",
                         "isAdvancedComponent": true,
                         "designerReference": [
                             {
@@ -442,9 +442,9 @@
                                 "_visibility": false
                             }
                         ],
-                        "f78ad375-bad6-39e2-2e8c-070c48cdd616": {
+                        "df6cd08f-998c-1582-61ae-42717254c4d7": {
                             "paletteKey": "html-editor",
-                            "parentEditorKey": "302c942b-0840-f1ed-76c0-2d0e98267e3d",
+                            "parentEditorKey": "5970702f-a7f4-2748-575e-9dea9ce4d43b",
                             "isAdvancedChildComponent": true,
                             "designerReference": [
                                 {
@@ -461,7 +461,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Add Incident",
+                                    "_value": "Edit Incident",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -469,9 +469,9 @@
                         }
                     }
                 },
-                "419051fd-8be3-bae4-0896-fec5d3457624": {
+                "604568e1-d721-9bc5-52dd-5a359bcf06be": {
                     "paletteKey": "FlexLayoutCol",
-                    "parentEditorKey": "1a08fdee-c33d-1ef6-0009-d6677e839e7d",
+                    "parentEditorKey": "1ad71f33-dd85-9fe0-cbbc-20ff66fc2896",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -535,10 +535,11 @@
                             "_attrDef": "p"
                         }
                     ],
-                    "b0b7c31f-b6c5-3804-49e9-cac4af89d785": {
+                    "96cf4668-6db9-c1f2-ebc1-b6c06fcade8c": {
                         "paletteKey": "NG-Input",
-                        "parentEditorKey": "419051fd-8be3-bae4-0896-fec5d3457624",
+                        "parentEditorKey": "604568e1-d721-9bc5-52dd-5a359bcf06be",
                         "isAdvancedComponent": true,
+                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -579,7 +580,7 @@
                             },
                             {
                                 "_key": "[(ngModel)]",
-                                "_value": "",
+                                "_value": "editableData.subject",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -642,7 +643,7 @@
                                 "_key": "matError",
                                 "_value": [
                                     {
-                                        "input1": "addIncidentForm.controls.subject.errors?.pattern",
+                                        "input1": "editIncidentForm.controls.subject.errors?.pattern",
                                         "input2": "Please enter alphabets only",
                                         "toggle": {
                                             "toggleData": [],
@@ -719,9 +720,9 @@
                         ]
                     }
                 },
-                "c8b4ed0d-414b-4549-fcd4-bdd672c8f5bc": {
+                "7f7aa377-e6a0-a551-0fc5-706d2c98fb32": {
                     "paletteKey": "FlexLayoutCol",
-                    "parentEditorKey": "1a08fdee-c33d-1ef6-0009-d6677e839e7d",
+                    "parentEditorKey": "1ad71f33-dd85-9fe0-cbbc-20ff66fc2896",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -785,9 +786,9 @@
                             "_attrDef": "p"
                         }
                     ],
-                    "a4013a79-b423-7c8b-63fe-4120c6da7dd3": {
+                    "9b075dc7-78c6-405f-dcb7-0b38074e6a04": {
                         "paletteKey": "NG-Input",
-                        "parentEditorKey": "c8b4ed0d-414b-4549-fcd4-bdd672c8f5bc",
+                        "parentEditorKey": "7f7aa377-e6a0-a551-0fc5-706d2c98fb32",
                         "isAdvancedComponent": true,
                         "designerReference": [
                             {
@@ -811,7 +812,7 @@
                             },
                             {
                                 "_key": "value",
-                                "_value": "",
+                                "_value": "{{description}}",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -829,7 +830,7 @@
                             },
                             {
                                 "_key": "[(ngModel)]",
-                                "_value": "",
+                                "_value": "editableData.description",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -892,7 +893,7 @@
                                 "_key": "matError",
                                 "_value": [
                                     {
-                                        "input1": "addIncidentForm.controls.description.errors?.pattern",
+                                        "input1": "editIncidentForm.controls.description.errors?.pattern",
                                         "input2": "Please enter alphabets and numerics only",
                                         "toggle": {
                                             "toggleData": [],
@@ -969,9 +970,9 @@
                         ]
                     }
                 },
-                "6c29b363-3aba-d34e-85d3-9af4f55f0a47": {
+                "68f29a5e-579d-5504-d887-d340dc47b3f7": {
                     "paletteKey": "FlexLayoutCol",
-                    "parentEditorKey": "1a08fdee-c33d-1ef6-0009-d6677e839e7d",
+                    "parentEditorKey": "1ad71f33-dd85-9fe0-cbbc-20ff66fc2896",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -1035,9 +1036,9 @@
                             "_attrDef": "p"
                         }
                     ],
-                    "670b696b-90fb-5354-c687-d626e18f02cf": {
+                    "d0294135-54e4-777f-f3eb-b8af33ba7e92": {
                         "paletteKey": "NG-Input",
-                        "parentEditorKey": "6c29b363-3aba-d34e-85d3-9af4f55f0a47",
+                        "parentEditorKey": "68f29a5e-579d-5504-d887-d340dc47b3f7",
                         "isAdvancedComponent": true,
                         "designerReference": [
                             {
@@ -1079,7 +1080,7 @@
                             },
                             {
                                 "_key": "[(ngModel)]",
-                                "_value": "",
+                                "_value": "editableData.prority",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1142,7 +1143,7 @@
                                 "_key": "matError",
                                 "_value": [
                                     {
-                                        "input1": "addIncidentForm.controls.priority.errors?.pattern",
+                                        "input1": "editIncidentForm.controls.priority.errors?.pattern",
                                         "input2": "Please enter number only",
                                         "toggle": {
                                             "toggleData": [],
@@ -1219,9 +1220,9 @@
                         ]
                     }
                 },
-                "6601884d-1268-6ca7-534d-f040017b7572": {
+                "3787efe0-df71-87fe-a258-0fdfb278e74a": {
                     "paletteKey": "FlexLayoutCol",
-                    "parentEditorKey": "1a08fdee-c33d-1ef6-0009-d6677e839e7d",
+                    "parentEditorKey": "1ad71f33-dd85-9fe0-cbbc-20ff66fc2896",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -1285,9 +1286,9 @@
                             "_attrDef": "p"
                         }
                     ],
-                    "8f83144d-0ad0-f697-7fb8-a60f81cb4967": {
+                    "adc5aa79-5361-dc6b-20de-24d9d8fa8135": {
                         "paletteKey": "NG-DatePicker",
-                        "parentEditorKey": "6601884d-1268-6ca7-534d-f040017b7572",
+                        "parentEditorKey": "3787efe0-df71-87fe-a258-0fdfb278e74a",
                         "isAdvancedComponent": true,
                         "designerReference": [
                             {
@@ -1450,7 +1451,7 @@
                             },
                             {
                                 "_key": "[(ngModel)]",
-                                "_value": "",
+                                "_value": "editableData.incident_date",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1531,9 +1532,9 @@
                         ]
                     }
                 },
-                "7c4a0fe9-9df6-75b3-0cd2-17dd91e87d39": {
+                "fb06d84b-5e87-eaa6-2b24-12db56ad26f1": {
                     "paletteKey": "FlexLayoutCol",
-                    "parentEditorKey": "1a08fdee-c33d-1ef6-0009-d6677e839e7d",
+                    "parentEditorKey": "1ad71f33-dd85-9fe0-cbbc-20ff66fc2896",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -1597,9 +1598,9 @@
                             "_attrDef": "p"
                         }
                     ],
-                    "f3392722-4a8e-02b6-b3e6-c41503932fe1": {
+                    "78098cb9-7679-3d49-2e7a-6c866413e93b": {
                         "paletteKey": "NG-RaisedButton",
-                        "parentEditorKey": "7c4a0fe9-9df6-75b3-0cd2-17dd91e87d39",
+                        "parentEditorKey": "fb06d84b-5e87-eaa6-2b24-12db56ad26f1",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1615,7 +1616,7 @@
                             },
                             {
                                 "_key": "buttonname",
-                                "_value": "Submit",
+                                "_value": "Update",
                                 "_type": "a",
                                 "_attrDef": "p",
                                 "_useAsLabel": true
@@ -1628,7 +1629,7 @@
                             },
                             {
                                 "_key": "(click)",
-                                "_value": "addIncident()",
+                                "_value": "updateIncident()",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },

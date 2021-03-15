@@ -15,6 +15,10 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-deleteconfirmationComponent
+import { deleteconfirmationComponent } from '../components/deleteconfirmationComponent/deleteconfirmation.component';
+//CORE_REFERENCE_IMPORT-editincidentComponent
+import { editincidentComponent } from '../components/editincidentComponent/editincident.component';
 //CORE_REFERENCE_IMPORT-addincidentconfirmpageComponent
 import { addincidentconfirmpageComponent } from '../components/addincidentconfirmpageComponent/addincidentconfirmpage.component';
 //CORE_REFERENCE_IMPORT-incidentlistComponent
@@ -50,6 +54,10 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-deleteconfirmationComponent
+deleteconfirmationComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-editincidentComponent
+editincidentComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-addincidentconfirmpageComponent
 addincidentconfirmpageComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-incidentlistComponent

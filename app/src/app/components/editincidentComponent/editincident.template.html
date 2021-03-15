@@ -1,0 +1,37 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <form [formGroup]="editIncidentForm">
+      <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+        <h2>
+          Edit Incident</h2>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="editableData.subject" placeholder="Enter Subject" [required]="false" formControlName="subject">
+          <mat-error align="start" *ngIf="editIncidentForm.controls.subject.errors?.pattern">Please enter alphabets only</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="editableData.description" placeholder="Enter Description" value="{{description}}" [required]="false" formControlName="description">
+          <mat-error align="start" *ngIf="editIncidentForm.controls.description.errors?.pattern">Please enter alphabets and numerics only</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="editableData.prority" placeholder="Enter Priority" [required]="false" formControlName="priority">
+          <mat-error align="start" *ngIf="editIncidentForm.controls.priority.errors?.pattern">Please enter number only</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <mat-form-field [appearance]="&apos;outline&apos;">
+          <input matInput placeholder="Incident Date" [matDatepicker]="picker" formControlName="incidentDate" [(ngModel)]="editableData.incident_date" [min]="currentDate" [required]="false" [disabled]="false">
+          <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+          <mat-datepicker #picker [disabled]="false"></mat-datepicker>
+
+        </mat-form-field>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button style="width:100%" color="primary" (click)="updateIncident()">Update</button></div>
+    </form>
+  </div>
+</div>

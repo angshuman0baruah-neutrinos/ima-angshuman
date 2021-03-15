@@ -1,0 +1,14 @@
+{
+    "appPageId": "4271f264-f22a-012e-5435-3e0f3f48691b",
+    "appPageName": "editIncident",
+    "componentName": "editincidentComponent",
+    "selectorName": "bh-editincident",
+    "htmlFileName": "editincident.template.html",
+    "tsFileName": "editincident.component.ts",
+    "createDate": "2021-03-15T07:50:46.919Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

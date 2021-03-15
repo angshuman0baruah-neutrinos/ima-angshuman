@@ -18,5 +18,15 @@
         "appPageName": "addIncidentConfirmPage",
         "componentName": "addincidentconfirmpageComponent",
         "createDate": "2021-03-10T11:01:06.729Z"
+    },
+    "4271f264-f22a-012e-5435-3e0f3f48691b": {
+        "appPageName": "editIncident",
+        "componentName": "editincidentComponent",
+        "createDate": "2021-03-15T07:50:46.919Z"
+    },
+    "5267c592-e01e-9f5f-c86d-64ce8916860b": {
+        "appPageName": "deleteConfirmation",
+        "componentName": "deleteconfirmationComponent",
+        "createDate": "2021-03-15T10:23:40.653Z"
     }
 }

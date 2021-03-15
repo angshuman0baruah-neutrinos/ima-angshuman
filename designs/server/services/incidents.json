@@ -1,0 +1,948 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "type": "tab",
+        "createdDate": "2021-03-12T08:50:40.136Z",
+        "relativeParentPath": "",
+        "label": "incidents",
+        "disabled": false,
+        "info": "",
+        "generateNext": true,
+        "serviceName": "incidents"
+    },
+    {
+        "id": "sd_cElYEsyvVrXo2fwE",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "getIncidents",
+        "path": "/getIncidents",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "/getIncidents": {
+                "get": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [],
+                    "responses": {}
+                }
+            }
+        },
+        "uploadFileOptions": {},
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 60,
+        "y": 140,
+        "wires": [
+            [
+                "sd_1lTffz7s9XREMf5g"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "incidents",
+        "functionName": "sd_cElYEsyvVrXo2fwE"
+    },
+    {
+        "id": "sd_1lTffz7s9XREMf5g",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "getIncidentsScript",
+        "script": "bh.local.query = \"select * from incidents order by id desc\";\nbh.local.queryParam = [];",
+        "functionName": "getIncidentsScript",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 205,
+        "y": 140,
+        "wires": [
+            [
+                "sd_EnKPQYckw1V6a0fu"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "incidents"
+    },
+    {
+        "id": "sd_EnKPQYckw1V6a0fu",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "sqlConn",
+        "databaseConfig": "sd_7D87qXYHj0u2b9p9",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.local",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "paramMappingObj": {
+            "type": "bh.local",
+            "value": "queryParam"
+        },
+        "dbType": "mysql",
+        "functionName": "sqlConn",
+        "category": "Storage",
+        "__n_excludedFromValidation__": {},
+        "x": 360,
+        "y": 140,
+        "wires": [
+            [
+                "sd_ZcV8Xjvc1Dtjn6Aa",
+                "sd_i1AszUyTH3S5VfTp"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "incidents"
+    },
+    {
+        "id": "sd_9A1Bm2yB2bDhJaZN",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "getIncidentOut",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "bh.local",
+            "value": "statusCode",
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": "bh.local.statusCode",
+            "obj": "bh.local.response",
+            "send": "bh.local.response"
+        },
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "getIncidentOut",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 625,
+        "y": 200,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_ZcV8Xjvc1Dtjn6Aa",
+        "type": "ServerLog",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "bh.local.result",
+        "logLevel": "info",
+        "functionName": "sd_ZcV8Xjvc1Dtjn6Aa",
+        "category": "General",
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 485,
+        "y": 60,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_i1AszUyTH3S5VfTp",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "getIncidentOutScript",
+        "script": "\nif (bh.local.result && bh.local.result.length > 0) {\n    bh.local.statusCode = 200;\n    bh.local.result = {\n        \"message\": \"Data Found\",\n        \"data\": bh.local.result\n    }\n} else {\n    bh.local.statusCode = 400;\n    bh.local.result = {\n        \"message\": \"No Data Found\",\n        \"data\": []\n    }\n}\n\nbh.local.response = {\n    \"statusCode\": bh.local.statusCode,\n    \"result\": bh.local.result\n}\n\n",
+        "functionName": "getIncidentOutScript",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 485,
+        "y": 200,
+        "wires": [
+            [
+                "sd_9A1Bm2yB2bDhJaZN"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_boB0b98VjORQi3zf",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "addIncidents",
+        "path": "/addIncidents",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "/addIncidents": {
+                "post": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [],
+                    "responses": {}
+                }
+            }
+        },
+        "uploadFileOptions": {},
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 65,
+        "y": 420,
+        "wires": [
+            [
+                "sd_nwYlaTruwvgjrGVr"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "incidents",
+        "functionName": "sd_boB0b98VjORQi3zf"
+    },
+    {
+        "id": "sd_nwYlaTruwvgjrGVr",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "addIncidentsScript",
+        "script": "console.log(bh.input.body);\nbh.local.isRequestValid = true;\nif ((!bh.input.body.subject || bh.input.body.subject == \"\") || (!bh.input.body.priority || bh.input.body.priority == \"\") || (!bh.input.body.decription || bh.input.body.decription == \"\") || (!bh.input.body.incidentDate || bh.input.body.incidentDate == \"\")) {\n    bh.local.isRequestValid = false;\n    bh.local.statusCode = 400;\n    bh.local.result = {\n        \"message\": \"Invalid Data\",\n        \"data\": []\n    }\n}",
+        "functionName": "addIncidentsScript",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 185,
+        "y": 420,
+        "wires": [
+            [
+                "sd_Tp5AIVx2KzEsRLlt"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_1InTkBfYACN32Kk7",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "addIncidentOutScript",
+        "script": "console.log(bh.local.result);\nif (bh.local.result.affectedRows > 0) {\n    bh.local.statusCode = 200;\n    bh.local.result = {\n        \"message\": \"Incident  added successfully\",\n        \"data\": []\n    }\n\n} else {\n    bh.local.statusCode = 203;\n    bh.local.result = {\n        \"message\": \"Unable to add incodent\",\n        \"data\": []\n    }\n}\n\nbh.local.responseData = {\n    \"statusCode\": bh.local.statusCode,\n    \"result\": bh.local.result\n}\n",
+        "functionName": "addIncidentOutScript",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 665,
+        "y": 400,
+        "wires": [
+            [
+                "sd_MGSUom4ju3e6SKM2",
+                "sd_3rPrrOhjT96dnb0p"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_IHtMabY9rWu7giDl",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "addsqlConn",
+        "databaseConfig": "sd_7D87qXYHj0u2b9p9",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.local",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "paramMappingObj": {
+            "type": "bh.local",
+            "value": "queryParam"
+        },
+        "dbType": "mysql",
+        "functionName": "addsqlConn",
+        "category": "Storage",
+        "__n_excludedFromValidation__": {},
+        "x": 545,
+        "y": 320,
+        "wires": [
+            [
+                "sd_1InTkBfYACN32Kk7"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_Tp5AIVx2KzEsRLlt",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "addIncidentSwitch",
+        "property": "isRequestValid",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.isRequestValid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "addIncidentSwitch",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 325,
+        "y": 420,
+        "wires": [
+            [
+                "sd_1WrS3AkfnL3tMa4J"
+            ],
+            [
+                "sd_UMhzGEJnqg6dEX2k"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_UMhzGEJnqg6dEX2k",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "addIncidentElseScript",
+        "script": "\nbh.local.result = {}\nbh.local.result.affectedRows = 0;",
+        "functionName": "addIncidentElseScript",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 485,
+        "y": 420,
+        "wires": [
+            [
+                "sd_1InTkBfYACN32Kk7"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_1WrS3AkfnL3tMa4J",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.query = ` INSERT INTO incidents (subject, description, prority, incident_date) VALUES ('${bh.input.body.subject}', '${bh.input.body.decription}', '${bh.input.body.priority}', '${bh.input.body.incidentDate}')`;\nbh.local.queryParam = [];",
+        "functionName": "sd_1WrS3AkfnL3tMa4J",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 425,
+        "y": 320,
+        "wires": [
+            [
+                "sd_IHtMabY9rWu7giDl"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_3rPrrOhjT96dnb0p",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "updateIncidentOut",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "responseData",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "bh.local",
+            "value": "statusCode",
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": "bh.local.statusCode",
+            "obj": "bh.local.responseData",
+            "send": "bh.local.responseData"
+        },
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "updateIncidentOut",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 965,
+        "y": 760,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_YC5FR9sOVtbJTyHR",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "updateIncidentOutScript",
+        "script": "console.log(bh.local.result);\nif (bh.local.result.affectedRows > 0) {\n    bh.local.statusCode = 200;\n    bh.local.result = {\n        \"message\": \"Incident  updated successfully\",\n        \"data\": []\n    }\n\n} else {\n    bh.local.statusCode = 203;\n    bh.local.result = {\n        \"message\": \"Unable to update incodent\",\n        \"data\": []\n    }\n}\n\nbh.local.responseData = {\n    \"statusCode\": bh.local.statusCode,\n    \"result\": bh.local.result\n}\n",
+        "functionName": "updateIncidentOutScript",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 665,
+        "y": 640,
+        "wires": [
+            [
+                "sd_3rPrrOhjT96dnb0p",
+                "sd_MGSUom4ju3e6SKM2"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_MGSUom4ju3e6SKM2",
+        "type": "ServerLog",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "updateIncidentLog",
+        "outputs": 0,
+        "logObject": "bh.local.result",
+        "logLevel": "info",
+        "functionName": "updateIncidentLog",
+        "category": "General",
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 965,
+        "y": 520,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_jI0o0MmH9I6HdkZR",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "updatesqlConn",
+        "databaseConfig": "sd_7D87qXYHj0u2b9p9",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.local",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "paramMappingObj": {
+            "type": "bh.local",
+            "value": "queryParam"
+        },
+        "dbType": "mysql",
+        "functionName": "updatesqlConn",
+        "category": "Storage",
+        "__n_excludedFromValidation__": {},
+        "x": 545,
+        "y": 560,
+        "wires": [
+            [
+                "sd_YC5FR9sOVtbJTyHR"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_ll0ZWTQP73jRCSRz",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "updateIncidentElseScript",
+        "script": "\nbh.local.result = {}\nbh.local.result.affectedRows = 0;",
+        "functionName": "updateIncidentElseScript",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 485,
+        "y": 660,
+        "wires": [
+            [
+                "sd_YC5FR9sOVtbJTyHR"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_EuwZeL1ICDRl7fri",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.query = ` UPDATE incidents SET subject = '${bh.input.body.subject}', description = '${bh.input.body.decription}', prority = '${bh.input.body.priority}', incident_date = '${bh.input.body.incidentDate}' WHERE id = ${bh.input.body.id}`;\nbh.local.queryParam = [];",
+        "functionName": "sd_EuwZeL1ICDRl7fri",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 425,
+        "y": 560,
+        "wires": [
+            [
+                "sd_jI0o0MmH9I6HdkZR"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_SMvsQjyXMXXdpLlV",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "updateIncidentsSwitch",
+        "property": "isRequestValid",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.isRequestValid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "updateIncidentsSwitch",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 325,
+        "y": 660,
+        "wires": [
+            [
+                "sd_EuwZeL1ICDRl7fri"
+            ],
+            [
+                "sd_ll0ZWTQP73jRCSRz"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_0V5S865TEDY26om6",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "updateIncidentsScript",
+        "script": "console.log(bh.input.body);\nbh.local.isRequestValid = true;\nif ((!bh.input.body.id || bh.input.body.id == \"\") || (!bh.input.body.subject || bh.input.body.subject == \"\") || (!bh.input.body.priority || bh.input.body.priority == \"\") || (!bh.input.body.decription || bh.input.body.decription == \"\") || (!bh.input.body.incidentDate || bh.input.body.incidentDate == \"\")) {\n    bh.local.isRequestValid = false;\n    bh.local.statusCode = 400;\n    bh.local.result = {\n        \"message\": \"Invalid Data\",\n        \"data\": []\n    }\n}",
+        "functionName": "updateIncidentsScript",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 185,
+        "y": 660,
+        "wires": [
+            [
+                "sd_SMvsQjyXMXXdpLlV"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_wm1z9Meq1HCLFdwA",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "updateIncidents",
+        "path": "/updateIncidents",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "/updateIncidents": {
+                "post": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [],
+                    "responses": {}
+                }
+            }
+        },
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 65,
+        "y": 660,
+        "wires": [
+            [
+                "sd_0V5S865TEDY26om6"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "incidents",
+        "functionName": "sd_wm1z9Meq1HCLFdwA"
+    },
+    {
+        "id": "sd_xjKiMs0FSKpyO1gF",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "deleteIncidentOutScript",
+        "script": "console.log(bh.local.result);\nif (bh.local.result.affectedRows > 0) {\n    bh.local.statusCode = 200;\n    bh.local.result = {\n        \"message\": \"Incident  deleted successfully\",\n        \"data\": []\n    }\n\n} else {\n    bh.local.statusCode = 203;\n    bh.local.result = {\n        \"message\": \"Unable to delete incodent\",\n        \"data\": []\n    }\n}\n\nbh.local.responseData = {\n    \"statusCode\": bh.local.statusCode,\n    \"result\": bh.local.result\n}\n",
+        "functionName": "deleteIncidentOutScript",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 685,
+        "y": 880,
+        "wires": [
+            [
+                "sd_MGSUom4ju3e6SKM2",
+                "sd_3rPrrOhjT96dnb0p"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_aW7SZY3scxpjUvnR",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "deletesqlConn",
+        "databaseConfig": "sd_7D87qXYHj0u2b9p9",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.local",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "paramMappingObj": {
+            "type": "bh.local",
+            "value": "queryParam"
+        },
+        "dbType": "mysql",
+        "functionName": "deletesqlConn",
+        "category": "Storage",
+        "__n_excludedFromValidation__": {},
+        "x": 565,
+        "y": 800,
+        "wires": [
+            [
+                "sd_xjKiMs0FSKpyO1gF"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_jcH0ulfplziHBgpM",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "deleteIncidentElseScript",
+        "script": "\nbh.local.result = {}\nbh.local.result.affectedRows = 0;",
+        "functionName": "deleteIncidentElseScript",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 505,
+        "y": 900,
+        "wires": [
+            [
+                "sd_xjKiMs0FSKpyO1gF"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_8Mc7LO9CgBY3HHHJ",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.query = ` DELETE FROM incidents WHERE id = ${bh.input.body.id}`;\nbh.local.queryParam = [];",
+        "functionName": "sd_8Mc7LO9CgBY3HHHJ",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 445,
+        "y": 800,
+        "wires": [
+            [
+                "sd_aW7SZY3scxpjUvnR"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_XpWpwq6fOSHCr1cK",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "deleteIncidentsSwitch",
+        "property": "isRequestValid",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.isRequestValid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "deleteIncidentsSwitch",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 345,
+        "y": 900,
+        "wires": [
+            [
+                "sd_8Mc7LO9CgBY3HHHJ"
+            ],
+            [
+                "sd_jcH0ulfplziHBgpM"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_Wio731sVOZLtu4eh",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "deleteIncidentsScript",
+        "script": "bh.local.isRequestValid = true;\nif ((!bh.input.body.id || bh.input.body.id == \"\")) {\n    bh.local.isRequestValid = false;\n    bh.local.statusCode = 400;\n    bh.local.result = {\n        \"message\": \"Invalid Data\",\n        \"data\": []\n    }\n}",
+        "functionName": "deleteIncidentsScript",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 205,
+        "y": 900,
+        "wires": [
+            [
+                "sd_XpWpwq6fOSHCr1cK"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_bqTHGW8vQ7xabDLA",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_KHo2GXnQOqnhBy04",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "deleteIncidents",
+        "path": "/deleteIncidents",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "delete",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "/deleteIncidents": {
+                "delete": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [],
+                    "responses": {}
+                }
+            }
+        },
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 85,
+        "y": 900,
+        "wires": [
+            [
+                "sd_Wio731sVOZLtu4eh"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "incidents",
+        "functionName": "sd_bqTHGW8vQ7xabDLA"
+    }
+]

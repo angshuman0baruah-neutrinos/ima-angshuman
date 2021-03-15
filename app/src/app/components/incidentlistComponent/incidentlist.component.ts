@@ -1,11 +1,14 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
 import { Component, OnInit, ViewChild } from '@angular/core'
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { Router } from '@angular/router';
 import { addIncidentService } from '../../sd-services/addIncidentService';
+import { editincidentComponent } from '../editincidentComponent/editincident.component';
+import { deleteconfirmationComponent } from '../deleteconfirmationComponent/deleteconfirmation.component';
 
 
 
@@ -32,7 +35,7 @@ export class incidentlistComponent extends NBaseComponent implements OnInit {
     tableData: any;
     resTableData: any;
 
-    constructor(private router: Router, public addIncidentSrvs: addIncidentService) {
+    constructor(private router: Router, public addIncidentSrvs: addIncidentService, public dialog: MatDialog) {
         super();
     }
 
@@ -46,6 +49,31 @@ export class incidentlistComponent extends NBaseComponent implements OnInit {
 
     homeClick = function () {
         this.router.navigateByUrl('/home');
+    };
+
+    editClick(rowData): void {
+        const dialogRef = this.dialog.open(editincidentComponent, {
+            "data": rowData
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+            this.ngOnInit();
+            console.log('The dialog was closed');
+        });
+    }
+
+    deleteClick = function (rowData) {
+       const dialogRef = this.dialog.open(deleteconfirmationComponent, {
+            "data": {
+                "id": rowData.id,
+                "subject": rowData.subject
+            }
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+            this.ngOnInit();
+            console.log('The dialog was closed');
+        });
     };
 
     ngOnInit() {

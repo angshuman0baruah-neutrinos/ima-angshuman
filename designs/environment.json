@@ -14,7 +14,12 @@
             "SSD_DEFAULT_PORT": "server",
             "webAppMountpoint": "both",
             "CLOCK_TOLERANCE": "server",
-            "NGFORAGE_MOBILE_DRIVER": "client"
+            "NGFORAGE_MOBILE_DRIVER": "client",
+            "MYSQL_HOST": "server",
+            "MYSQL_USER": "server",
+            "MYSQL_PASSWORD": "server",
+            "MYSQL_PORT": "server",
+            "MYSQL_DB": "server"
         }
     },
     "dev": {
@@ -32,7 +37,12 @@
             "SSD_DEFAULT_PORT": "8081",
             "webAppMountpoint": "web",
             "CLOCK_TOLERANCE": "5",
-            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB"
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "MYSQL_HOST": "127.0.0.1",
+            "MYSQL_USER": "poc",
+            "MYSQL_PASSWORD": "admin@123",
+            "MYSQL_PORT": "3306",
+            "MYSQL_DB": "ima-angshuman"
         }
     },
     "prod": {
@@ -50,7 +60,12 @@
             "SSD_DEFAULT_PORT": "8081",
             "webAppMountpoint": "web",
             "CLOCK_TOLERANCE": "5",
-            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB"
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "MYSQL_HOST": "127.0.0.1",
+            "MYSQL_USER": "poc",
+            "MYSQL_PASSWORD": "admin@123",
+            "MYSQL_PORT": "3306",
+            "MYSQL_DB": "ima-angshuman"
         }
     }
 }

@@ -1,4 +1,4 @@
-export default {
+{
     "db-config": {
         "sd_7D87qXYHj0u2b9p9": {
             "id": "sd_7D87qXYHj0u2b9p9",
@@ -8,11 +8,11 @@ export default {
             "dbOption": {
                 "name": "mysql_0",
                 "type": "mysql",
-                "host": process.env.MYSQL_HOST,
-                "port": process.env.MYSQL_PORT,
-                "username": process.env.MYSQL_USER,
-                "password": process.env.MYSQL_PASSWORD,
-                "database": process.env.MYSQL_DB,
+                "host": "__ssd__env__process.env.MYSQL_HOST__ssd__env__end",
+                "port": "__ssd__env__process.env.MYSQL_PORT__ssd__env__end",
+                "username": "__ssd__env__process.env.MYSQL_USER__ssd__env__end",
+                "password": "__ssd__env__process.env.MYSQL_PASSWORD__ssd__env__end",
+                "database": "__ssd__env__process.env.MYSQL_DB__ssd__env__end",
                 "synchronize": false,
                 "extra": {
                     "connectionLimit": 10
@@ -77,11 +77,11 @@ export default {
             "mongodb_options": "",
             "mysql_name": "mysql_0",
             "mysql_type": "mysql",
-            "mysql_host": process.env.MYSQL_HOST,
-            "mysql_port": process.env.MYSQL_PORT,
-            "mysql_username": process.env.MYSQL_USER,
-            "mysql_password": process.env.MYSQL_PASSWORD,
-            "mysql_database": process.env.MYSQL_DB,
+            "mysql_host": "__ssd__env__process.env.MYSQL_HOST__ssd__env__end",
+            "mysql_port": "__ssd__env__process.env.MYSQL_PORT__ssd__env__end",
+            "mysql_username": "__ssd__env__process.env.MYSQL_USER__ssd__env__end",
+            "mysql_password": "__ssd__env__process.env.MYSQL_PASSWORD__ssd__env__end",
+            "mysql_database": "__ssd__env__process.env.MYSQL_DB__ssd__env__end",
             "mysql_synchronize": false,
             "mysql_extra.connectionLimit": 10,
             "mysql_charset": "UTF8_GENERAL_CI",

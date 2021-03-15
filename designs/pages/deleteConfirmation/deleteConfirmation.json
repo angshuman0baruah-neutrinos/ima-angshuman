@@ -1,0 +1,14 @@
+{
+    "appPageId": "5267c592-e01e-9f5f-c86d-64ce8916860b",
+    "appPageName": "deleteConfirmation",
+    "componentName": "deleteconfirmationComponent",
+    "selectorName": "bh-deleteconfirmation",
+    "htmlFileName": "deleteconfirmation.template.html",
+    "tsFileName": "deleteconfirmation.component.ts",
+    "createDate": "2021-03-15T10:23:40.653Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

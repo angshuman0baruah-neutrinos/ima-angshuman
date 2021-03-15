@@ -1,0 +1,14 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+        <h3>
+          Are you sure to delete &quot;{{deletableData.subject}}&quot; data ? </h3>
+      </div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" style="margin-right:15px;" fxLayoutAlign="end stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button color="warn" (click)="deleteIncident()">Yes</button></div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button color="accent" (click)="cancelDelete();">No</button></div>
+    </div>
+  </div>
+</div>
